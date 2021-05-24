@@ -1,0 +1,166 @@
+html,
+  body {
+    height: 100%; /*setting this explicitly is important*/
+  }
+
+  body {
+    display: flex; /*flex superpowers activated! */
+    flex-direction: column; /*Stack the flex-items (main and footer elements) vertically NOT horizontally*/
+    background-color: #fff;
+    margin: 0;
+    font-family: Lato, sans-serif;
+    color: #222;
+    font-size: 0.9em;
+  }
+
+  main {
+    flex: 1 0 auto;
+    display: flex; /*fill the available space*/
+  }
+
+   aside {
+  	flex: 0 0 40px; /*as a flex item: do not grow or shrink. Just stay fixed at 40px*/
+  	display: flex; /*Now you're a flex-container, you can decide how your flex-items are laid*/
+  	flex-direction: column; /*Stack my flex-item's vertically...change the default direction*/
+  	justify-content: space-around; /*Interesting...since direction is changed, this works on the vertical direction*/
+  	align-items: center; /*direction is changed! This affects the horizontal direction*/
+  	background-color: #f2f2f2; /*make me pretty*/
+  }
+
+  /*font size for the icons*/
+  aside i.fa {
+  	font-size: 0.9em;
+  }
+
+
+.content {
+    display: flex;
+    flex: 1 0 auto; /*this makes sure the section grows o fill the entire available space*/
+    flex-direction: column;
+}
+
+.music-head {
+  flex: 0 0 100px; /*Same memo, don't grow or shrink - stay at 280px*/
+  display: flex;  
+  padding: 40px;
+ /* background-color: #8bcef7; */ 
+  background-image: linear-gradient(to right, black, blue 30%,green);
+}
+
+.music-head img{
+ padding: 20px;
+ width: 250px;
+}
+
+
+.live-music{
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  font-weight: 300;
+  color: #fff;
+  padding-left: 50px;
+}
+
+
+.live-music div:nth-child(1){
+  margin-bottom: auto;
+}
+
+.live-music div:nth-child(2){
+  margin-top: 0;
+}
+
+.live-music div:nth-child(2) i.fa{
+  font-size: 0.9em;
+  padding: 0 0.7em;
+  font-weight: 300;
+}
+
+
+.music-list {
+  flex: 1 0 auto;
+  list-style-type: none;
+  padding: 5px 10px 0px;
+}
+
+.music-list li {
+  display: flex; /*Targets each list containing the paragraphs*/
+  padding: 0 20px;
+  min-height: 50px;
+}
+
+.music-list li p {
+  flex: 0 0 25%; /*This is the sweet sauce*/
+}
+
+li span.live-cloud {
+  border: 1px solid black;
+  font-size: 0.6em;
+  padding: 3px;
+}
+
+li:nth-child(2n) {
+  background-color: #f2f2f2;
+}
+
+
+footer {
+  display: flex;
+    flex: 1 0 auto; /*don't grow or shrink - just stay at a height of 90px.*/
+     padding: 10px;
+    color: #fff;
+    background-color: rgba(61, 100, 158, .9);
+    
+  }
+
+  .music-quote{
+    display: flex;
+    margin-right: auto;
+  }
+
+  .music-quote img{
+    padding:10px;
+}
+
+
+
+.music-controls {
+    display: flex;
+    align-items: center;
+}
+
+.music-controls i.fa {
+    padding: 0 40px;
+}
+
+
+/* media queries for responsiveness */
+
+@media (max-width: 769px) {
+
+  main{
+    width: 100%;
+    display: contents;
+  }
+
+.sidebar{
+  display: none;
+
+}
+
+.content {
+        flex: 0 0 auto;
+      }
+
+
+ .footer{
+  display: flex;
+  flex: auto; 
+  
+  }
+
+}
+
+
+
